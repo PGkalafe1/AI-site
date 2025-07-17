@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>چت بات هوشمند - کاملاً فعال</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="p-6">
+    <div class="max-w-4xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-white mb-4">🤖 چت بات هوشمند</h1>
+            <p class="text-white/80 text-lg">با هوش مصنوعی واقعی گفتگو کنید!</p>
+        </div>
+
+        <!-- Chat Interface -->
+        <div class="glass rounded-3xl p-6 shadow-2xl">
+            <!-- Chat Header -->
+            <div class="flex items-center justify-between mb-6 pb-4 border-b border-white/20">
+                <div class="flex items-center">
+                    <div
+                        class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-xl mr-3">
+                        🤖
+                    </div>
+                    <div>
+                        <h3 class="text-white font-bold">دستیار هوشمند</h3>
+                        <p class="text-white/70 text-sm">آنلاین و آماده پاسخ</p>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse ml-2"></div>
+                    <span class="text-white/70 text-sm">فعال</span>
+                </div>
+            </div>
+
+            <!-- Suggestions -->
+            <div class="mb-4">
+                <p class="text-white/80 text-sm mb-3">💡 پیشنهادات:</p>
+                <div class="flex flex-wrap">
+                    <span class="suggestion text-white" onclick="sendSuggestion('سلام! چطوری؟')">سلام! چطوری؟</span>
+                    <span class="suggestion text-white" onclick="sendSuggestion('یک شوخی بگو')">یک شوخی بگو</span>
+                    <span class="suggestion text-white" onclick="sendSuggestion('کد HTML بنویس')">کد HTML بنویس</span>
+                    <span class="suggestion text-white" onclick="sendSuggestion('شعر بگو')">شعر بگو</span>
+                    <span class="suggestion text-white" onclick="sendSuggestion('ریاضی کمک کن')">ریاضی کمک کن</span>
+                </div>
+            </div>
+
+            <!-- Chat Messages -->
+            <div class="chat-container glass rounded-2xl p-4 mb-4" id="chatMessages">
+                <div class="bot-message">
+                    سلام! 👋 من یک چت بات واقعی و کاملاً فعال هستم!
+                    <br><br>
+                    می‌تونم:
+                    <br>• کد بنویسم 💻
+                    <br>• شعر و داستان بگم 📝
+                    <br>• مسائل ریاضی حل کنم 🔢
+                    <br>• شوخی کنم 😄
+                    <br>• سوالاتتون رو جواب بدم ❓
+                    <br><br>
+                    چه کاری برات انجام بدم؟
+                </div>
+            </div>
+
+            <!-- Typing Indicator -->
+            <div class="typing" id="typingIndicator">
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="flex gap-3">
+                <input type="text" id="messageInput" placeholder="پیامتون رو بنویسید..."
+                    class="flex-1 glass rounded-2xl px-6 py-3 text-white placeholder-white/60 border-0 outline-none"
+                    onkeypress="handleKeyPress(event)">
+                <button onclick="sendMessage()" class="send-btn text-white px-6 py-3 rounded-2xl font-semibold">
+                    ارسال 🚀
+                </button>
+            </div>
+
+            <!-- Controls -->
+            <div class="flex justify-between items-center mt-4 pt-4 border-t border-white/20">
+                <button onclick="clearChat()" class="text-white/70 hover:text-white text-sm">
+                    🗑️ پاک کردن
+                </button>
+                <button onclick="downloadChat()" class="text-white/70 hover:text-white text-sm">
+                    💾 دانلود چت
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
